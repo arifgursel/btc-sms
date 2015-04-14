@@ -1,0 +1,24 @@
+{
+  "name": "api-service-starter",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Randall Degges <r@rdegges.com>"
+  ],
+  "description": "An API service starter kit for Node.",
+  "keywords": [
+    "api",
+    "service",
+    "starter",
+    "kit"
+  ],
+  "license": "UNLICENSE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
