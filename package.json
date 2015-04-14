@@ -13,5 +13,8 @@
     "kit"
   ],
   "author": "Randall Degges",
-  "license": "UNLICENSE"
+  "license": "UNLICENSE",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
 }
