@@ -1,0 +1,17 @@
+{
+  "name": "api-service-starter",
+  "version": "0.0.0",
+  "description": "An API service starter kit for Node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "service",
+    "starter",
+    "kit"
+  ],
+  "author": "Randall Degges",
+  "license": "UNLICENSE"
+}
