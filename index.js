@@ -8,6 +8,7 @@ var app = express();
 
 // Application settings
 app.set('view engine', 'jade');
+app.set('views', './src/views');
 
 // Middlewares
 app.use(stormpath.init(app));
