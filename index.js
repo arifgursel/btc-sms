@@ -11,6 +11,7 @@ var app = express();
 // Application settings
 app.set('view engine', 'jade');
 app.set('views', './src/views');
+app.locals.siteTitle = 'My API Service';
 
 // Middlewares
 app.use('/static', express.static('./bower_components', {
