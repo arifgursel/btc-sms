@@ -10,7 +10,7 @@ var app = express();
 
 // Application settings
 app.set('view engine', 'jade');
-app.set('views', './src/views');
+app.set('views', './views');
 app.locals.siteTitle = 'My API Service';
 
 // Middlewares
