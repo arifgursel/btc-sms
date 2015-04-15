@@ -3,7 +3,7 @@
 var express = require('express');
 var stormpath = require('express-stormpath');
 
-var publicRoutes = require('./src/routes/public');
+var publicRoutes = require('./routes/public');
 
 // Globals
 var app = express();
