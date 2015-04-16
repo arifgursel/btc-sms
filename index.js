@@ -13,7 +13,9 @@ var app = express();
 // Application settings
 app.set('view engine', 'jade');
 app.set('views', './views');
+
 app.locals.siteTitle = 'My API Service';
+app.locals.stripePublishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
 
 // Middlewares
 app.use('/static', express.static('./static', {
