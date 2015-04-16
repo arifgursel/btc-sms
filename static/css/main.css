@@ -1,0 +1,10 @@
+/*
+ * Navbar settings.
+ */
+ul.nav.navbar-nav {
+  float: right;
+}
+
+li.create-account > a {
+  color: #fff !important;
+}
