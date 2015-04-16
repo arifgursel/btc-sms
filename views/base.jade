@@ -15,6 +15,7 @@ html(lang='en')
     <![endif]-->
   body
     nav.navbar.navbar-default.navbar-static-top
+      - var nav = {}; nav[title] = 'active'
       .container
         .navbar-header
           button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse')
@@ -25,21 +26,21 @@ html(lang='en')
           a.navbar-brand(href='/') #{siteTitle}
         #navbar-collapse.collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active
+            li(class='#{nav.Home}')
               a(href='/') Home
-            li
+            li(class='#{nav.Pricing}')
               a(href='/pricing') Pricing
-            li
+            li(class='#{nav.Docs}')
               a(href='/docs') Docs
             if user
-              li
+              li(class='#{nav.Dashboard}')
                 a(href='/dashboard') Dashboard
-              li
+              li(class='#{nav.Logout}')
                 a(href='/logout') Logout
             else
-              li
+              li(class='#{nav.Login}')
                 a(href='/login') Login
-              li.create-account
+              li(class='#{nav.Register} create-account')
                 a(href='/register') Create Account
     block body
     script(src='/static/jquery/dist/jquery.min.js')
