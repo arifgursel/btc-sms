@@ -15,17 +15,31 @@ block body
             .right
               strong API Key Secret:
               span.api-key-secret #{user.apiKeys.items[0].secret}
-
     .row.widgets
-      .col-md-offset-1.col-md-5.text-center
+      .col-md-offset-1.col-md-5
         .panel.panel-primary
-          .panel-heading
+          .panel-heading.text-center
             h3.panel-title Analytics
-          p.
+          .analytics-content
+            span hi
+            p.
             panel bah
-      .col-md-5.text-center
+      .col-md-5
         .panel.panel-primary
-          .panel-heading
+          .panel-heading.text-center
             h3.panel-title Billing
-          p.
-            account billing totals here blah blah
+          .billing-content.text-center
+            span.account-balance $#{user.customData.balance.toFixed(2)}
+            br
+            span
+              i.
+                *current account balance
+            form(action='/charge', method='POST')
+              script.stripe-button(
+                src = 'https://checkout.stripe.com/checkout.js',
+                data-email = '#{user.email}',
+                data-key = '#{stripePublishableKey}',
+                data-name = '#{siteTitle}',
+                data-amount = '2000',
+                data-allow-remember-me = 'false'
+              )
