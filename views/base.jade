@@ -8,10 +8,38 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title #{siteTitle} - #{title}
     link(href='/static/bootswatch/sandstone/bootstrap.min.css', rel='stylesheet')
+    link(href='/static/css/main.css', rel='stylesheet')
     <!--[if lt IE 9]>
     script(src='/static/html5shiv/dist/html5shiv.min.js')
     script(src='/static/respond/dest/respond.min.js')
     <![endif]-->
   body
+    nav.navbar.navbar-default.navbar-static-top
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') #{siteTitle}
+        #navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='/') Home
+            li
+              a(href='/pricing') Pricing
+            li
+              a(href='/docs') Docs
+            if user
+              li
+                a(href='/dashboard') Dashboard
+              li
+                a(href='/logout') Logout
+            else
+              li
+                a(href='/login') Login
+              li.create-account
+                a(href='/register') Create Account
     script(src='/static/jquery/dist/jquery.min.js')
     script(src='/static/bootstrap/dist/js/bootstrap.min.js')
