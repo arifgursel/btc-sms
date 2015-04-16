@@ -22,7 +22,10 @@ app.use('/static', express.static('./bower_components', {
   index: false,
   redirect: false
 }));
-app.use(stormpath.init(app));
+app.use(stormpath.init(app, {
+  enableAccountVerification: true,
+  redirectUrl: '/dashboard'
+}));
 
 // Routes
 app.use('/', publicRoutes);
