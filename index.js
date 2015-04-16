@@ -14,6 +14,10 @@ app.set('views', './views');
 app.locals.siteTitle = 'My API Service';
 
 // Middlewares
+app.use('/static', express.static('./static', {
+  index: false,
+  redirect: false
+}));
 app.use('/static', express.static('./bower_components', {
   index: false,
   redirect: false
