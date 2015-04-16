@@ -1,5 +1,6 @@
 'use strict';
 
+var async = require('async');
 var express = require('express');
 var stormpath = require('express-stormpath');
 
@@ -26,10 +27,27 @@ app.use('/static', express.static('./bower_components', {
 app.use(stormpath.init(app, {
   enableAccountVerification: true,
   expandApiKeys: true,
+  expandCustomData: true,
   redirectUrl: '/dashboard',
   secretKey: 'blah',
   postRegistrationHandler: function(account, req, res, next) {
-    account.createApiKey(function(err, key) {
+    async.parallel([
+      // Set the user's account balance to 0.
+      function(cb) {
+        account.customData.balance = 0;
+        account.customData.save(function(err) {
+          if (err) return cb(err);
+          cb();
+        });
+      },
+      // Create an API key for this user.
+      function(cb) {
+        account.createApiKey(function(err, key) {
+          if (err) return cb(err);
+          cb();
+        });
+      }
+    ], function(err) {
       if (err) return next(err);
       next();
     });
