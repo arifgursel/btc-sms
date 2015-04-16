@@ -27,6 +27,7 @@ app.use(stormpath.init(app, {
   enableAccountVerification: true,
   expandApiKeys: true,
   redirectUrl: '/dashboard',
+  secretKey: 'blah',
   postRegistrationHandler: function(account, req, res, next) {
     account.createApiKey(function(err, key) {
       if (err) return next(err);
