@@ -60,3 +60,11 @@ li.create-account > a {
 .dashboard .right {
   float: right;
 }
+
+.dashboard .panel {
+  padding-bottom: 2em;
+}
+
+.dashboard .panel-heading {
+  margin-bottom: 2em;
+}
