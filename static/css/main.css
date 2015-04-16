@@ -68,3 +68,16 @@ li.create-account > a {
 .dashboard .panel-heading {
   margin-bottom: 2em;
 }
+
+.dashboard .analytics-content, .dashboard .billing-content {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.dashboard .account-balance {
+  font-size: 2em;
+}
+
+.dashboard form {
+  margin-top: 2em;
+}
