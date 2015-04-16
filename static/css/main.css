@@ -24,3 +24,10 @@ li.create-account > a {
   margin-top: 4em;
   font-size: 1em;
 }
+
+/*
+ * Dashboard page settings.
+ */
+.dashboard h1 {
+  margin-bottom: 2em;
+}
