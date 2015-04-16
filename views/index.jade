@@ -2,3 +2,16 @@ extends base
 
 block vars
   - var title = 'Home'
+
+block body
+  .container.index
+    h1.text-center A Simple Phone Survey API
+    .row
+      .col-xs-12.col-md-offset-2.col-md-8
+        .jumbotron.text-justify
+          p.
+            #{siteTitle} makes it easy to conduct phone surveys automatically.
+            Simply write a script, generate some options, and hit the API endpoints
+            to start getting data!
+          a(href='/register')
+            button.btn.btn-lg.btn-primary.center-block(type='button') Get Started!
