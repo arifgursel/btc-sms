@@ -8,3 +8,15 @@ ul.nav.navbar-nav {
 li.create-account > a {
   color: #fff !important;
 }
+
+/*
+ * Index page settings.
+ */
+.index .jumbotron {
+  margin-top: 2em;
+}
+
+.index button {
+  margin-top: 4em;
+  font-size: 1em;
+}
