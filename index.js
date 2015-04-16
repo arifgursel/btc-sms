@@ -3,6 +3,7 @@
 var express = require('express');
 var stormpath = require('express-stormpath');
 
+var privateRoutes = require('./routes/private');
 var publicRoutes = require('./routes/public');
 
 // Globals
@@ -24,11 +25,18 @@ app.use('/static', express.static('./bower_components', {
 }));
 app.use(stormpath.init(app, {
   enableAccountVerification: true,
-  redirectUrl: '/dashboard'
+  redirectUrl: '/dashboard',
+  postRegistrationHandler: function(account, req, res, next) {
+    account.createApiKey(function(err, key) {
+      if (err) return next(err);
+      next();
+    });
+  }
 }));
 
 // Routes
 app.use('/', publicRoutes);
+app.use('/dashboard', privateRoutes);
 
 // Server
 app.listen(process.env.PORT || 3000);
