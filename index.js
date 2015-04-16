@@ -25,6 +25,7 @@ app.use('/static', express.static('./bower_components', {
 }));
 app.use(stormpath.init(app, {
   enableAccountVerification: true,
+  expandApiKeys: true,
   redirectUrl: '/dashboard',
   postRegistrationHandler: function(account, req, res, next) {
     account.createApiKey(function(err, key) {
@@ -36,7 +37,7 @@ app.use(stormpath.init(app, {
 
 // Routes
 app.use('/', publicRoutes);
-app.use('/dashboard', privateRoutes);
+app.use('/dashboard', stormpath.loginRequired, privateRoutes);
 
 // Server
 app.listen(process.env.PORT || 3000);
