@@ -34,9 +34,10 @@ app.use(stormpath.init(app, {
   secretKey: 'blah',
   postRegistrationHandler: function(account, req, res, next) {
     async.parallel([
-      // Set the user's account balance to 0.
+      // Set the user's default settings.
       function(cb) {
         account.customData.balance = 0;
+        account.customData.totalQueries = 0;
         account.customData.save(function(err) {
           if (err) return cb(err);
           cb();
