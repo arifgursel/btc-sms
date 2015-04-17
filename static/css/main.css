@@ -74,7 +74,7 @@ li.create-account > a {
   padding-right: 2em;
 }
 
-.dashboard .account-balance {
+.dashboard .account-balance, .dashboard .total-queries {
   font-size: 2em;
 }
 
