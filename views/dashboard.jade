@@ -29,12 +29,12 @@ block body
           .panel-heading.text-center
             h3.panel-title Billing
           .billing-content.text-center
-            span.account-balance $#{user.customData.balance.toFixed(2)}
+            span.account-balance $#{(user.customData.balance / 100).toFixed(2)}
             br
             span
               i.
                 *current account balance
-            form(action='/charge', method='POST')
+            form(action='/dashboard/charge', method='POST')
               script.stripe-button(
                 src = 'https://checkout.stripe.com/checkout.js',
                 data-email = '#{user.email}',
