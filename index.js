@@ -15,6 +15,7 @@ var app = express();
 app.set('view engine', 'jade');
 app.set('views', './views');
 
+app.locals.costPerQuery = parseInt(process.env.COST_PER_QUERY);
 app.locals.siteTitle = 'My API Service';
 app.locals.stripePublishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
 
