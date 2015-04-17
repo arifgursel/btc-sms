@@ -4,6 +4,7 @@ var async = require('async');
 var express = require('express');
 var stormpath = require('express-stormpath');
 
+var apiRoutes = require('./routes/api');
 var privateRoutes = require('./routes/private');
 var publicRoutes = require('./routes/public');
 
@@ -59,6 +60,7 @@ app.use(stormpath.init(app, {
 
 // Routes
 app.use('/', publicRoutes);
+app.use('/api', apiRoutes);
 app.use('/dashboard', stormpath.loginRequired, privateRoutes);
 
 // Server
