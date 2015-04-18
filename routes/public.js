@@ -14,5 +14,9 @@ router.get('/pricing', function(req, res) {
   res.render('pricing');
 });
 
+router.get('/docs', function(req, res) {
+  res.render('docs');
+});
+
 // Exports
 module.exports = router;
