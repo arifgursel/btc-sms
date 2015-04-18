@@ -99,3 +99,43 @@ li.create-account > a {
 .pricing .end {
   margin-bottom: 2em;
 }
+
+/*
+ * Documentation page settings.
+ */
+.docs h1 {
+  margin-bottom: 2em;
+}
+
+.docs h2 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.docs h3 {
+  /*padding-left: 2em;*/
+  font-weight: bold;
+}
+
+.docs span {
+  font-size: 1.2em;
+  padding-left: 2.7em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  display: block;
+}
+
+.docs .description {
+  font-size: 1.2em;
+  padding-left: 2.6em;
+}
+
+.docs .table-box {
+  padding-left: 3em !important;
+  margin-top: 1em !important;
+}
+
+.docs pre {
+  margin-left: 3em;
+}
