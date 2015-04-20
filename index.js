@@ -61,7 +61,7 @@ app.use(stormpath.init(app, {
 
 // Routes
 app.use('/', publicRoutes);
-app.use('/api', apiRoutes);
+app.use('/api', stormpath.apiAuthenticationRequired, apiRoutes);
 app.use('/dashboard', stormpath.loginRequired, privateRoutes);
 
 // Server

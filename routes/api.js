@@ -3,7 +3,6 @@
 var bodyParser = require('body-parser');
 var express = require('express');
 var request = require('request');
-var stormpath = require('express-stormpath');
 var twilio = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 // Globals
@@ -15,7 +14,7 @@ var COST_PER_QUERY = parseInt(process.env.COST_PER_QUERY);
 router.use(bodyParser.json());
 
 // Routes
-router.post('/message', stormpath.apiAuthenticationRequired, function(req, res) {
+router.post('/message', function(req, res) {
   if (!req.body || !req.body.phoneNumber) {
     return res.status(400).json({ error: 'phoneNumber is required.' });
   } else if (!BTC_EXCHANGE_RATE) {
