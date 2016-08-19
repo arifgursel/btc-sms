@@ -33,7 +33,8 @@ app.use(stormpath.init(app, {
   expandApiKeys: true,
   expandCustomData: true,
   redirectUrl: '/dashboard',
-  secretKey: 'blah',
+  application: process.env.STORMPATH_APPLICATION_HREF,
+  secretKey: process.env.STORMPATH_CLIENT_APIKEY_SECRET,
   postRegistrationHandler: function(account, req, res, next) {
     async.parallel([
       // Set the user's default settings.
